@@ -149,7 +149,8 @@ public class CharacterActivity extends AppCompatActivity {
                     int kills = responseBody.getInt("totalHonorableKills");
 
 
-                    CharacterModel character = new CharacterModel(name, battlegroup, image, classWow, race, gender, ap, faction, level, kills, newRaceName, newClassName, newFaction, newGender);
+                    CharacterModel character = new CharacterModel(name, battlegroup, image, classWow, race,
+                            gender, ap, faction, level, kills, newRaceName, newClassName, newFaction, newGender);
 
 
                     String imageThumb = responseBody.getString("thumbnail");
@@ -159,7 +160,6 @@ public class CharacterActivity extends AppCompatActivity {
                     CustomAdapterCharacter adapter = new CustomAdapterCharacter(CharacterActivity.this, characterModels);
 
                     listView.setAdapter(adapter);
-
 
                     adapter.add(character);
 
@@ -171,7 +171,6 @@ public class CharacterActivity extends AppCompatActivity {
                             Intent myIntent = new Intent(CharacterActivity.this, CharacterDetailView.class);
 
 
-
                             try {
 
                                 realm = (EditText) findViewById(R.id.realm);
@@ -180,7 +179,9 @@ public class CharacterActivity extends AppCompatActivity {
                                 characterImage = responseBody.getString("thumbnail");
                                 myIntent.putExtra("url2", characterImage);
                                 myIntent.putExtra("nameChar", charactername.getText().toString());
-                                myIntent.putExtra("nameRealm",  realm.getText().toString());
+                                myIntent.putExtra("nameRealm", realm.getText().toString());
+
+
                                 startActivity(myIntent);
 
                             } catch (JSONException e) {
@@ -189,6 +190,8 @@ public class CharacterActivity extends AppCompatActivity {
 
 
                         }
+
+
                     });
 
 

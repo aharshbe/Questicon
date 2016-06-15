@@ -45,7 +45,7 @@ public class CustomAdapterCharacter extends ArrayAdapter<CharacterModel> {
 
 
 
-        name.setText("Character Name:"+ " " +character.name);
+        name.setText(character.name);
         level.setText("Character Level:"+ " "+character.faction);
         battlegroup.setText("Character Battlegroup:"+ " " +character.battlegroup);
 //        wowclass.setText("Character Class:"+ " " +character.newClassName);
