@@ -45,6 +45,12 @@
         android:layout_below="@+id/realm"
         android:layout_alignParentStart="true" />
 
+    <WebView
+        android:layout_width="match_parent"
+        android:layout_height="425dp"
+        android:id="@+id/webViewChacter"
+        android:layout_alignTop="@+id/listView"
+        android:layout_centerHorizontal="true" />
 
 
 </RelativeLayout>
