@@ -3,7 +3,11 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 <item
     android:title="speakIconMenu"
-    android:icon="@drawable/speak5"
+    android:icon="@drawable/onvoice2"
+    android:enabled="true"
+    android:onClick="clickingSpeakIcon"
     app:showAsAction="ifRoom"
     />
+
+
 </menu>

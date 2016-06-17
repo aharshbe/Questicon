@@ -12,10 +12,13 @@ import android.support.v7.widget.SearchView;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.Switch;
 import android.widget.Toast;
 
 import com.loopj.android.http.AsyncHttpClient;
@@ -39,6 +42,7 @@ public class BossesActivity extends AppCompatActivity {
     View.OnClickListener mOnClickListener;
     TextToSpeech textToSpeech;
     int postitionTHis;
+    Switch switchAB;
     JsonHttpResponseHandler jsonHttpResponseHandler = new JsonHttpResponseHandler() {
 
 
@@ -97,7 +101,7 @@ public class BossesActivity extends AppCompatActivity {
                                         }
                                     }
                                 });
-                            }else {
+                            } else {
                                 final BossesModel boss = bossesModels3.get(position);
 
 
@@ -167,7 +171,7 @@ public class BossesActivity extends AppCompatActivity {
                         }
                     });
                 }
-                Toast.makeText(BossesActivity.this, "There are "+jsonArray.length()+ " bosses to search through.", Toast.LENGTH_SHORT).show();
+                Toast.makeText(BossesActivity.this, "There are " + jsonArray.length() + " bosses to search through.", Toast.LENGTH_SHORT).show();
 
 
             } catch (JSONException e) {
@@ -240,6 +244,7 @@ public class BossesActivity extends AppCompatActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
+//        inflater.inflate(R.menu.menu_switch, menu);
         inflater.inflate(R.menu.info, menu);
         inflater.inflate(R.menu.options_menu, menu);
 
@@ -286,6 +291,18 @@ public class BossesActivity extends AppCompatActivity {
     }
 
 
+    public void clickingSpeakIcon(MenuItem item) {
+
+       if(item.isEnabled() == true){
+           item.setEnabled(false);
+           Toast.makeText(BossesActivity.this, "It's enabled", Toast.LENGTH_SHORT).show();
+       }
+        if(!item.isEnabled() == true){
+            Toast.makeText(BossesActivity.this, "It's not enabled", Toast.LENGTH_SHORT).show();
+        }
+
+
+    }
 }
 
 
